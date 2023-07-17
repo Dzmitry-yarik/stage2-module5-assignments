@@ -45,23 +45,26 @@ public class LocalProcessor {
     @FullNameProcessorGeneratorAnnotation
     public String fullNameProcessOrGenerator(LinkedList<String> stringList) {
         if (stringList.size() == 0) {
-            return processorName = " ";
+            return processorName = "";
         }
+        processorVersion = new StringBuilder(" ");
         for (String str : stringList) {
-            processorVersion.append(str).append(' ');
+            processorVersion.append(str).append(" ");
         }
-        processorName = String.valueOf(processorVersion);
+        processorName = String.valueOf(processorVersion).trim();
+
         return processorName;
     }
 
     @ReadFullProcessorNameAnnotation
-    public void readFullProcessorName(File file) {
+      public void readFullProcessorName(File file) {
 
         try {
             informationScanner = new Scanner(file);
             while (informationScanner.hasNext()) {
                 processorVersion.append(informationScanner.nextLine());
             }
+            processorName = String.valueOf(processorVersion);
         } catch (FileNotFoundException e) {
             e.fillInStackTrace();
         }finally {

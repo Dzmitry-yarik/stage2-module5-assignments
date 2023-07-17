@@ -15,7 +15,7 @@ import lombok.Setter;
 @Setter
 public class LocalProcessor {
     private String processorName;
-    private Long period = 10000000000000L;
+    private Long period = 10_000_000_000_000L;
     protected String ProcessorVersion;
     private Integer valueofCheap;
     Scanner informationscanner;

@@ -44,8 +44,8 @@ public class LocalProcessor {
 
     @FullNameProcessorGeneratorAnnotation
     public String fullNameProcessOrGenerator(LinkedList<String> stringList) {
-        if (stringList == null) {
-            return String.valueOf(' ');
+        if (stringList.size() == 0) {
+            return processorName = " ";
         }
         for (String str : stringList) {
             processorVersion.append(str).append(' ');
